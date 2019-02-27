@@ -60,221 +60,39 @@ index
 
 <div class="container">
 	
-	<div class="row justify-content-center">
-		<div class="card-group">
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSxRpSBFftW5SuYtxj8_K5lQOfZABXnHZ9-vTZg7Xek8YMvLWshw" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://cf3.s3.souqcdn.com/item/2018/01/21/30/10/83/36/item_XL_30108336_92335013.jpg" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
+	{% for bicycle in bicycle_list %}
+		<!-- <div class="row justify-content-center"> -->
+			<!-- <div class="card-group"> -->
+				<div class="card mb-3" style="max-width: 540px;">
+				  <div class="row no-gutters">
+				    <div class="col-md-4">
+				      <img src="{{ bicycle.image }}" class="card-img" alt="...">
+				    </div>
+				    <div class="col-md-8">
+				      <div class="card-body">
+				        <h5 class="card-title">{{ bicycle.type_b }} {{ bicycle.cost }}</h5>
+				        <p class="card-text">cost: {{ bicycle.cost }}</p>
+				        <p class="card-text">style: {{ bicycle.style }}</p>
+				        <p class="card-text">owner: {{ bicycle.owner }}</p>
 
-		</div>
-	</div>
+				        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+<!--  -->
+			<!-- </div> -->
+		<!-- </div>	 -->
+		<br>
+		<hr class="style18">
+	{% endfor %}
+
 	
-	<br>
-	<hr class="style18">
-	<div class="row justify-content-center">
-		<div class="card-group">
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSxRpSBFftW5SuYtxj8_K5lQOfZABXnHZ9-vTZg7Xek8YMvLWshw" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://cf3.s3.souqcdn.com/item/2018/01/21/30/10/83/36/item_XL_30108336_92335013.jpg" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
 
-		</div>
-	</div>
-	
-	<br>
-	<hr class="style18">
-	<div class="row justify-content-center">
-		<div class="card-group">
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSxRpSBFftW5SuYtxj8_K5lQOfZABXnHZ9-vTZg7Xek8YMvLWshw" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://cf3.s3.souqcdn.com/item/2018/01/21/30/10/83/36/item_XL_30108336_92335013.jpg" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-		</div>
-	</div>
-
-	<br>
-	<hr class="style18">
-	<div class="row justify-content-center">
-		<div class="card-group">
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSxRpSBFftW5SuYtxj8_K5lQOfZABXnHZ9-vTZg7Xek8YMvLWshw" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://cf3.s3.souqcdn.com/item/2018/01/21/30/10/83/36/item_XL_30108336_92335013.jpg" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-		</div>
-	</div>
-	<br>
-	<hr class="style18">
-	<div class="row justify-content-center">
-		<div class="card-group">
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSxRpSBFftW5SuYtxj8_K5lQOfZABXnHZ9-vTZg7Xek8YMvLWshw" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://cf3.s3.souqcdn.com/item/2018/01/21/30/10/83/36/item_XL_30108336_92335013.jpg" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-		</div>
-	</div>
-	<br>
-	<hr class="style18">
-	<div class="row justify-content-center">
-		<div class="card-group">
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSxRpSBFftW5SuYtxj8_K5lQOfZABXnHZ9-vTZg7Xek8YMvLWshw" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-			<div class="card mb-3" style="max-width: 540px;">
-			  <div class="row no-gutters">
-			    <div class="col-md-4">
-			      <img src="https://cf3.s3.souqcdn.com/item/2018/01/21/30/10/83/36/item_XL_30108336_92335013.jpg" class="card-img" alt="...">
-			    </div>
-			    <div class="col-md-8">
-			      <div class="card-body">
-			        <h5 class="card-title">Card title</h5>
-			        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-			        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-		</div>
-	</div>
 
 </div>
 
-
+<!-- https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSxRpSBFftW5SuYtxj8_K5lQOfZABXnHZ9-vTZg7Xek8YMvLWshw"  -->
 
 
 {% endblock %}

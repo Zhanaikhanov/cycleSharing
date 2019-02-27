@@ -6,14 +6,57 @@ from django.contrib.auth import authenticate, login as ll_login, logout as ll_lo
 from django.views import View
 from .forms import LoginForm,SignForm
 from django.contrib.auth.models import User
+from bicycle.models import Bicycle, BicycleRent
+from bicycle.forms import PostForm
+
 # 
 
 
 
 class IndexView(View):
-	def get(self, request):
-		return render(request,'main/index.html')
+	initial = {'key':'value'}
+	form_class = PostForm
+	def get(self, request, *args, **kwargs):
+		form = self.form_class(initial=self.initial)
+		context = {'bicycle_list': Bicycle.objects.all()
+		,'post_form':form}
+		return render(request,'main/index.html',context)
 	
+
+	def post(self, request, *args, **kwargs):
+		form = self.form_class(request.POST)
+		if form.is_valid():
+			# some actions
+			type_b = form.cleaned_data['type_b']
+			style = form.cleaned_data['style']
+			image = form.cleaned_data['image']
+			cost = form.cleaned_data['cost']
+			stars = form.cleaned_data['stars']
+			
+			print("posted")
+			# ==============
+			# fs = form.save(commit=False)
+			bicycle = Bicycle.objects.create(
+				type_b=type_b,
+				style=style,
+				image = image,
+				cost=cost,
+				stars=stars,
+				owner=request.user
+				)
+			bicycle.save()
+
+			context = {
+			'form':form,
+			'success':'bicyclebicycle have been succesfully registered.'
+			}
+			return render(request,'main/index.html',context)
+
+		else:
+			context = {'form':form}
+			return render(request,'main/index.html',context)
+
+
 
 class SignView(View):
 	form_class = SignForm
@@ -106,8 +149,8 @@ class LoginView(View):
 				ll_login(request,user)
 				return HttpResponse("logged in malades")
 			else:
-				return HttpResponse("ee naebwik")
+				return HttpResponse("ee not logged in")
 
 
 		else:
-			return HttpResponse("tebe pizda")
+			return HttpResponse("not valid")
